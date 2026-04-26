@@ -113,17 +113,18 @@ img {
 
 /* Category Tabs */
 .category-tab {
-    border: 2px solid grey;
+    border: 2px solid lightgray;
     border-radius: 8px;
-    background: snow;
+    background: lightgray;
     cursor: pointer;
+    font-weight: 700px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     margin: 1pt;
 }
 
 .category-tab:hover {
     background-color: var(--light-gold);
-    border: 2px solid var(--light-brown);
+    border: 2px solid var(--light-gold);
     transform: scale(1.05);
     transition-duration: 150ms;
 }
@@ -132,7 +133,7 @@ img {
 .category-tab:focus {
     color: var(--light-gold);
     background-color: #A0522D;
-    border-color: var(--dark-brown);
+    border-color: #A0522D;
     border-width: 2px;
 }
 
