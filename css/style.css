@@ -117,7 +117,6 @@ img {
     border-radius: 8px;
     background: lightgray;
     cursor: pointer;
-    font-weight: 700px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     margin: 1pt;
 }
