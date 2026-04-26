@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Mr. Creamy Donut</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" type="image/png" href="/mr-creamy-donut/images/mr-creamy-donut-logo.PNG" sizes="512x512">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <div class="logo-img">
+                        <img src="images/mr-creamy-donut-logo.jpg" alt="Mr. Creamy Donut Logo">
+                        <i class="fas fa-donut"></i>
+                    </div>
+                    <div class="logo-text">
+                        MR. CREAMY
+                        <span>DONUT</span>
+                    </div>
+                </a>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">R0.00</span>
+            </div>
+            <div class="cart-actions">
+                <a href="checkout.html" class="btn btn-brown" id="checkoutBtn">Checkout</a>
+                <button class="btn btn-outline" id="clearCartBtn">Clear Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Delicious Menu</h1>
+            <p>Choose from our wide selection of handcrafted donuts</p>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section class="menu-categories section">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">All Donuts</button>
+                <button class="category-tab" data-category="original">Original Donut</button>
+                <button class="category-tab" data-category="classic">Classic Favorites</button>
+                <button class="category-tab" data-category="specialty">Specialty Donuts</button>
+                <button class="category-tab" data-category="seasonal">Seasonal Specials</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Items -->
+    <section class="menu-items section">
+        <div class="container">
+            <div class="products-grid" id="menuGrid">
+                <!-- Classic Favorites -->
+                <div class="product-card" data-category="classic">
+                    <div class="product-badge">Popular</div>
+                    <img src="images/creamy-chocolate-bliss.jpg" alt="Creamy Chocolate Bliss" class="product-img">
+                    <div class="product-content">
+                        <h3>Creamy Chocolate Bliss</h3>
+                        <p class="product-desc">Double chocolate with cream filling hiting the tip of the tongue</p>
+                        <div class="product-price">R7.99</div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="qty-btn minus" data-id="1">-</button>
+                                <span class="qty-value" data-id="1">1</span>
+                                <button class="qty-btn plus" data-id="1">+</button>
+                            </div>
+                            <button class="btn btn-primary add-to-cart" data-id="1">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="classic">
+                    <img src="images/vanilla-glazed-sprinkles.jpg" alt="Vanilla Rainbow Sprinkles" class="product-img">
+                    <div class="product-content">
+                        <h3>Vanilla Glazed Sprinkles</h3>
+                        <p class="product-desc">Vanilla glazed ring Donut, with rainbow sprinkles</p>
+                        <div class="product-price">R7.99</div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="qty-btn minus" data-id="2">-</button>
+                                <span class="qty-value" data-id="2">1</span>
+                                <button class="qty-btn plus" data-id="2">+</button>
+                            </div>
+                            <button class="btn btn-primary add-to-cart" data-id="2">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="original">
+                    <img src="images/picture-coming-soon.jpg" alt="Original Ring Donut" class="product-img">
+                    <div class="product-content">
+                        <h3>Original Ring Donut</h3>
+                        <p class="product-desc">Original ring donut with a vanilla glaze, sweet and crunchy</p>
+                        <div class="product-price">R7.99</div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="qty-btn minus" data-id="3">-</button>
+                                <span class="qty-value" data-id="3">1</span>
+                                <button class="qty-btn plus" data-id="3">+</button>
+                            </div>
+                            <button class="btn btn-primary add-to-cart" data-id="3">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specialty Donuts -->
+                <div class="product-card" data-category="specialty">
+                    <div class="product-badge"> Most Wanted </div>
+                    <img src="images/happy-bliss-box.jpg" alt="Happy Bliss Box" class="product-img">
+                    <div class="product-content">
+                        <h3>Happy Bliss Box</h3>
+                        <p class="product-desc">The Happy Bliss Box it's a deligacy to share with friends, family, colleagues or loved ones which create unforgettable moments that you will never forget.</p>
+                        <div class="product-price">R46.99</div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="qty-btn minus" data-id="4">-</button>
+                                <span class="qty-value" data-id="4">1</span>
+                                <button class="qty-btn plus" data-id="4">+</button>
+                            </div>
+                            <button class="btn btn-primary add-to-cart" data-id="4">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-img">
+                            <img src="images/mr-creamy-donut-logo.jpg" alt="Mr. Creamy Donut Logo">
+                        </div>
+                        <div class="logo-text">
+                            MR. CREAMY
+                            <span>DONUT</span>
+                        </div>
+                    </div>
+                    <p>Delivering happiness one donut at a time since 2025. Proudly South African.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Vanderbijlpark, Gauteng, South Africa </li>
+                        <li><i class="fas fa-phone"></i> +27 (78) 210 1293 </li>
+                        <li><i class="fas fa-envelope"></i> orders@mrcreamydonut.com</li>
+                        <li><i class="fas fa-clock"></i> 7AM-9PM Daily</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers and new flavors!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mr. Creamy Donut. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fas fa-university"></i>
+                    <i class="fas fa-money-bill-wave"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        // Menu page specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // Category filtering
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            const productCards = document.querySelectorAll('.product-card');
+
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update active tab
+                    categoryTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter products
+                    productCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Newsletter form
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    showNotification('Thank you for subscribing!', 'success');
+                    this.reset();
+                });
+            }
+        });
+        
+        function showNotification(message, type) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = 'notification ' + type;
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

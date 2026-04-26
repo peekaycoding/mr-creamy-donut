@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Mr. Creamy Donut</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" type="image/png" href="/mr-creamy-donut/images/mr-creamy-donut-logo.PNG" sizes="512x512">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <div class="logo-img">
+                        <img src="images/mr-creamy-donut-logo.jpg" alt="Mr. Creamy Donut Logo">
+                        <i class="fas fa-donut"></i>
+                    </div>
+                    <div class="logo-text">
+                        MR. CREAMY
+                        <span>DONUT</span>
+                    </div>
+                </a>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">R0.00</span>
+            </div>
+            <div class="cart-actions">
+                <a href="checkout.html" class="btn btn-brown" id="checkoutBtn">Checkout</a>
+                <button class="btn btn-outline" id="clearCartBtn">Clear Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Story</h1>
+            <p>From a small bakery to your favorite donut shop</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Welcome to Mr. Creamy Donut</h2>
+                    <p>It all started with a young boy named Pakiso who grew up enjoying donuts. Fast forward he moved to vanderbijlpark in 2023 then began to enjoy the donuts more at the local bakery in Vanderbijlpark. 
+                        His favorite was always the simple glazed ring, but he dreamed of creating something even more special.</p>
+                    
+                    <p>In 2025 as he grew older Pakiso his passion for donuts only intensified. He began experimenting in his resident kitchen, 
+                        trying to recreate the perfect donut. After many attempts (and some delicious failures), he finally created 
+                        what would become our signature donut - the <strong>Creamy Chocolate Bliss</strong>.</p>
+                    <p>
+                        At first, Pakiso just made donuts for himself. But when he shared them with friends and resident mates, 
+                        they couldn't get enough. Word spread quickly through Vanderbijlpark and soon people were asking to buy 
+                        his creations.
+                    </p>
+                    <h2>From Kitchen to Shop</h2>
+                    <p>
+                        What started as a small resident operation quickly grew. Pakiso began selling his donuts at local markets 
+                        and events, always with lines of eager customers. The demand became so great that in 2025, he opened 
+                        the first MR. CREAMY DONUT shop in the heart of Vanderbijlpark.
+                    </p>
+                    <p>
+                        Today, we still use Pakiso's original recipes and techniques, but we've expanded our menu to include 
+                        a variety of delicious donuts that cater to all tastes. From the classic glazed ring to our famous 
+                        Creamy Chocolate Bliss, each donut is made with the same love and attention to detail that Pakiso 
+                        put into his very first batch.
+                    </p>
+                    <div class="mission-statement">
+                        <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+                        <p>To create unforgettable donut experiences by combining traditional craftsmanship with innovative flavors, using only premium ingredients sourced from trusted local suppliers. Every donut we make is a tribute to Pakiso's original vision - to create 
+                        the most delicious, creamy, satisfying donuts Vanderbijlpark has ever tasted.
+                    </p>
+                    <p>
+                        We're proud to be part of the Vanderbijlpark and Bedworthpark communities, and we look forward to 
+                        serving you our delicious donuts for many years to come!
+					</p>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="images/about-image.png">
+                </div>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Made with Love</h3>
+                    <p>Every donut is handcrafted by our expert bakers who pour their passion into each creation.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Quality Ingredients</h3>
+                    <p>We source only the finest ingredients from local farmers and trusted suppliers.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Focused</h3>
+                    <p>We believe in supporting our local community and creating spaces for connection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Team</h2>
+                <p>The passionate people behind your favorite donuts</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="images/pakiso-mokhethi-founder.jpeg" alt="Pakiso Mokhethi">
+                    </div>
+                    <h3>Pakiso Mokhethi</h3>
+                    <p class="member-role">Founder, Master Baker, Manager, Web Developer, Software Developer & Data Analyst</p>
+                    <p class="member-desc">With over a year of baking experience, Pakiso creates all our secret recipes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Info -->
+    <section class="store-info section">
+        <div class="container">
+            <div class="store-grid">
+                <div class="store-map">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Visit Our Store</h3>
+                        <p>Vanderbijlpark, Gauteng, South Africa</p>
+                    </div>
+                </div>
+                
+                <div class="store-hours">
+                    <h3><i class="fas fa-clock"></i> Store Hours</h3>
+                    <ul class="hours-list">
+                        <li>
+                            <span>Monday - Friday</span>
+                            <span>8:00 AM - 6:00 PM</span>
+                        </li>
+                        <li>
+                            <span>Saturday</span>
+                            <span>8:00 AM - 12:00 PM</span>
+                        </li>
+                        <li>
+                            <span>Sunday</span>
+                            <span>8:00 AM - 12:00 PM</span>
+                        </li>
+                        <li>
+                            <span>Holidays</span>
+                            <span>8:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-img">
+                            <img src="images/mr-creamy-donut-logo.jpg" alt="Mr. Creamy Donut Logo">
+                        </div>
+                        <div class="logo-text">
+                            MR. CREAMY
+                            <span>DONUT</span>
+                        </div>
+                    </div>
+                    <p>Delivering happiness one donut at a time since 2025. Proudly South African.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Vanderbijlpark, Gauteng, South Africa</li>
+                        <li><i class="fas fa-phone"></i> +27 (78) 210 1293</li>
+                        <li><i class="fas fa-envelope"></i> orders@mrcreamydonut.com</li>
+                        <li><i class="fas fa-clock"></i> 7AM-9PM Daily</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers and new flavors!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mr. Creamy Donut. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fas fa-university"></i>
+                    <i class="fas fa-money-bill-wave"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

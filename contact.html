@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Mr. Creamy Donut</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" type="image/png" href="/mr-creamy-donut/images/mr-creamy-donut-logo.PNG" sizes="512x512">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <div class="logo-img">
+                        <img src="images/mr-creamy-donut-logo.jpg" alt="Mr. Creamy Donut Logo">
+                        <i class="fas fa-donut"></i>
+                    </div>
+                    <div class="logo-text">
+                        MR. CREAMY
+                        <span>DONUT</span>
+                    </div>
+                </a>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">R0.00</span>
+            </div>
+            <div class="cart-actions">
+                <a href="checkout.html" class="btn btn-brown" id="checkoutBtn">Checkout</a>
+                <button class="btn btn-outline" id="clearCartBtn">Clear Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p>We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-section section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2><i class="fas fa-map-marker-alt"></i> Visit Us</h2>
+                    <div class="info-card">
+                        <h3>Our Bakery</h3>
+                        <p><i class="fas fa-location-dot"></i> Vanderbijlpark, Gauteng, South Africa</p>
+                        <p><i class="fas fa-phone"></i> +27 (78) 210 1293</p>
+                        <p><i class="fas fa-envelope"></i> hello@mrcreamydonut.com</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-clock"></i> Opening Hours</h3>
+                        <ul class="hours-list">
+                            <li>
+                                <span>Monday - Friday</span>
+                                <span>9:00 AM - 6:00 PM</span>
+                            </li>
+                            <li>
+                                <span>Saturday</span>
+                                <span>9:00 AM - 3:00 PM</span>
+                            </li>
+                            <li>
+                                <span>Sunday</span>
+                                <span>Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-question-circle"></i> Need Help?</h3>
+                        <p>For order inquiries: <strong>orders@mrcreamydonut.com</strong></p>
+                        <p>For catering: <strong>catering@mrcreamydonut.com</strong></p>
+                        <p>Call us: <strong>+27 (78) 210 1293</strong></p>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h2>Send us a Message</h2>
+                    <form id="contactForm" class="contact-form" action="https://formspree.io/f/mbdzalyp" method="post">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="order">Order Question</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-brown">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you offer delivery?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We offer delivery within Vanderbijlpark & Vereeniging. Delivery fee is free at locations near Vaal University of Technology with a minimum order of R40, for other locations delivery fee is R36 with a minimum order of R40 except express delivery. Orders are delivered within 30-60 minutes after preparation.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I place a large order for an event?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! We offer catering for events of all sizes. Please contact us at least 48 hours in advance for large orders (50+ donuts). We offer special pricing for bulk orders.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you have gluten-free options?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We currently offer three gluten-free donut varieties: Creamy Chocolate Bliss, Vanilla Ring Donut, and Original Ring Donut. Please note that while these are gluten-free, they are prepared in a kitchen that also processes gluten.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How long do your donuts stay fresh?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our donuts are best enjoyed the same day but will stay fresh for up to 2 days when stored in an airtight container at room temperature. We don't recommend refrigerating them as it can dry them out.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you accept custom orders?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We love creating custom donuts for special occasions. Please contact us at least 72 hours in advance for custom orders. We can customize flavors, colors, and decorations to match your theme.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What payment methods do you accept?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards (Visa, MasterCard), PayPal, Apple Pay, Google Pay, and cash. Online orders require credit card payment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-container">
+                <div class="map-info">
+                    <h3><i class="fas fa-info"></i> Info</h3>
+                    <p>We do not own a physical store yet, and we hope to own one soon!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-img">
+                            <img src="images/mr-creamy-donut-logo.jpg" alt="Mr. Creamy Donut Logo">
+                        </div>
+                        <div class="logo-text">
+                            MR. CREAMY
+                            <span>DONUT</span>
+                        </div>
+                    </div>
+                    <p>Delivering happiness one donut at a time since 2025. Proudly South African.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Vanderbijlpark, Gauteng, South Africa</li>
+                        <li><i class="fas fa-phone"></i> +27 (78) 210 1293</li>
+                        <li><i class="fas fa-envelope"></i> orders@mrcreamy donut.com</li>
+                        <li><i class="fas fa-clock"></i> 7AM-9PM Daily</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers and new flavors!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mr. Creamy Donut. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fas fa-university"></i>
+                    <i class="fas fa-money-bill-wave"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        // Contact page specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // FAQ functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    // Toggle active class
+                    this.classList.toggle('active');
+                    
+                    // Toggle answer display
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                    
+                    // Close other FAQ items
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== this) {
+                            otherQuestion.classList.remove('active');
+                            const otherAnswer = otherQuestion.nextElementSibling;
+                            const otherIcon = otherQuestion.querySelector('i');
+                            otherAnswer.style.maxHeight = null;
+                            otherIcon.style.transform = 'rotate(0deg)';
+                        }
+                    });
+                });
+            });
+        });
+        
+        
+    </script>
+</body>
+</html>

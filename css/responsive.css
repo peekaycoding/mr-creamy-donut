@@ -1,0 +1,1373 @@
+/* responsive.css - Responsive Styles */
+
+/*LARGE SCREENS (1200px and below)*/
+@media (max-width: 1200px) {
+    .container {
+        max-width: 95%;
+    }
+}
+
+/*TABLETS AND SMALL LAPTOPS (1024px and below)*/
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 var(--space-lg);
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+    
+    .checkout-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+    
+    .order-summary {
+        position: static;
+    }
+}
+
+/*TABLETS (992px and below)*/
+@media (max-width: 992px) {
+    .step-indicator {
+        gap: 20px;
+        max-width: 500px;
+    }
+    
+    .step-marker {
+        min-width: 90px;
+    }
+    
+    .step-marker:not(:last-child)::after {
+        width: 30px;
+        left: calc(50% + 25px);
+    }
+}
+
+/*TABLETS AND MOBILE (768px and below)*/
+@media (max-width: 768px) {
+
+    /* Prevent double-tap zoom on interactive elements */
+    button,
+    a,
+    .btn,
+    .category-tab,
+    .cart-icon,
+    .nav-links a,
+    .social-links a,
+    .faq-question,
+    .payment-option {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+     /* Ensure 100% width on mobile */
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+     /*Fix for notched phones */
+     @supports (padding: max(0px)) {
+        body {
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
+            padding-left: env(safe-area-inset-left);
+            padding-right: env(safe-area-inset-right);
+        }
+}
+
+    /* Header & Navigation */
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        align-items: center;
+        padding: var(--space-xl);
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        z-index: 999;
+        gap: var(--space-lg);
+    }
+    
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .header-actions {
+        gap: var(--space-sm);
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding: var(--space-xl) 0;
+        background-attachment: scroll;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+    
+    /* Layout Grids */
+    .about-grid,
+    .contact-grid,
+    .store-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Cart Modal */
+    .cart-modal {
+        max-width: 100%;
+    }
+    
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .newsletter-form button {
+        align-self: center;
+    }
+    
+    .contact-info li {
+        justify-content: center;
+    }
+    
+    /* Step Indicator */
+    .step-indicator {
+        max-width: 100%;
+        padding: 5px 0;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .step-marker {
+        min-width: 70px;
+        margin: 0 5px;
+    }
+    
+    .step-marker:not(:last-child)::after {
+        width: 20px;
+        left: calc(50% + 20px);
+    }
+    
+    .step-circle {
+        width: 22px;
+        height: 22px;
+        font-size: 0.8rem;
+    }
+    
+    .step-label {
+        font-size: 10px;
+    }
+    
+    /* Action Buttons */
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .receipt-actions {
+        flex-direction: column;
+    }
+    
+    .confirmation-row {
+        flex-direction: column;
+    }
+    
+    .confirmation-label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    /* Modal */
+    .modal-footer {
+        flex-direction: column;
+    }
+    
+    .modal-footer .btn {
+        width: 100%;
+    }
+}
+
+/*MOBILE PHONES (576px and below)*/
+@media (max-width: 576px) {
+    .step-indicator {
+        gap: 10px;
+    }
+    
+    .step-marker {
+        min-width: 60px;
+    }
+    
+    .step-circle {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+    }
+    
+    .step-label {
+        font-size: 9px;
+    }
+}
+
+/*SMALL MOBILE PHONES (480px and below)*/
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .section {
+        padding: var(--space-xl) 0;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .quantity-selector {
+        justify-content: center;
+    }
+    
+    .checkout-actions {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    .notification {
+        left: var(--space-md);
+        right: var(--space-md);
+        bottom: var(--space-md);
+    }
+    
+    .step-marker {
+        min-width: 50px;
+    }
+    
+    .step-marker:not(:last-child)::after {
+        width: 15px;
+        left: calc(50% + 15px);
+    }
+}
+
+/*EXTRA SMALL PHONES (400px and below)*/
+@media (max-width: 400px) {
+    .step-indicator {
+        gap: 8px;
+    }
+    
+    .step-marker {
+        min-width: 45px;
+    }
+    
+    .step-circle {
+        width: 18px;
+        height: 18px;
+        font-size: 0.65rem;
+    }
+    
+    .step-label {
+        font-size: 8px;
+    }
+}
+
+/*VERY SMALL PHONES (360px and below)*/
+@media (max-width: 360px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-img {
+        height: 160px;
+    }
+    
+    .step-indicator {
+        gap: 5px;
+    }
+    
+    .step-marker {
+        min-width: 40px;
+    }
+    
+    .step-circle {
+        width: 16px;
+        height: 16px;
+        font-size: 0.6rem;
+    }
+    
+    .step-label {
+        font-size: 7px;
+    }
+}
+
+/*EXTRA SMALL PHONES (320px and below)*/
+@media (max-width: 320px) {
+    .step-indicator {
+        gap: 3px;
+    }
+    
+    .step-marker {
+        min-width: 35px;
+    }
+}
+
+/*LANDSCAPE MODE*/
+@media (max-height: 500px) and (orientation: landscape) {
+    .nav-links {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    .hero {
+        padding: 15px 0;
+    }
+    
+    .hero h1 {
+        font-size: 1.2rem;
+    }
+    
+    .step-indicator {
+        padding: 5px 0;
+    }
+    
+    .step-marker {
+        flex-direction: row;
+        gap: 8px;
+        min-width: auto;
+    }
+    
+    .step-circle {
+        margin: 0 5px 0 0;
+    }
+    
+    .cart-modal {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/*HOVER EFFECTS (Desktop only)*/
+@media (hover: hover) {
+    .step-marker:hover .step-circle {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+    }
+}
+
+/*FIX FOR NOTCHED PHONES*/
+@supports (padding: max(0px)) {
+    .cart-modal,
+    .custom-modal,
+    .notification {
+        padding-bottom: max(20px, env(safe-area-inset-bottom));
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+    }
+    
+    header {
+        padding-top: env(safe-area-inset-top);
+    }
+    
+    .nav-links.active {
+        padding-top: calc(30px + env(safe-area-inset-top));
+    }
+}
+
+/*COMPACT MOBILE DESIGN (from your old CSS)*/
+@media (max-width: 768px) {
+    /* Root spacing - MUCH tighter */
+    :root {
+        --space-xs: 0.25rem;
+        --space-sm: 0.5rem;
+        --space-md: 0.75rem;
+        --space-lg: 1rem;
+        --space-xl: 1.25rem;
+        --space-xxl: 1.5rem;
+    }
+    
+    body {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    p {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+    }
+    
+    .container {
+        padding: 0 12px;
+    }
+    
+    header {
+        padding: 4px 0;
+    }
+    
+    .navbar {
+        padding: 4px 0;
+    }
+    
+    .logo-img {
+        width: 32px !important;
+        height: 32px !important;
+    }
+    
+    .logo-text {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+    
+    .logo-text span {
+        font-size: 0.8rem;
+    }
+    
+    .cart-icon {
+        font-size: 1.2rem;
+    }
+    
+    .cart-count {
+        width: 18px;
+        height: 18px;
+        font-size: 0.7rem;
+    }
+    
+    .mobile-menu-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+    
+    .nav-links {
+        top: 50px;
+        padding: 12px;
+        gap: 8px;
+    }
+    
+    .nav-links a {
+        padding: 8px 0;
+        font-size: 0.95rem;
+    }
+    
+    .hero {
+        padding: 24px 0;
+    }
+    
+    .hero h1 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+    
+    .hero p {
+        font-size: 0.85rem;
+        margin-bottom: 16px;
+    }
+    
+    .hero-buttons {
+        gap: 8px;
+    }
+    
+    .btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        min-height: 36px;
+        border-radius: 6px;
+    }
+    
+    .btn i {
+        font-size: 0.9rem;
+    }
+    
+    .button-group {
+        gap: 6px;
+    }
+    
+    .section {
+        padding: 20px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 16px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.3rem;
+        margin-bottom: 4px;
+    }
+    
+    .section-header p {
+        font-size: 0.8rem;
+    }
+    
+    .products-grid {
+        gap: 12px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .product-card {
+        border-radius: 8px;
+    }
+    
+    .product-badge {
+        top: 6px;
+        right: 6px;
+        padding: 2px 6px;
+        font-size: 0.65rem;
+        border-radius: 4px;
+    }
+    
+    .product-img {
+        height: 120px;
+    }
+    
+    .product-content {
+        padding: 10px;
+    }
+    
+    .product-content h3 {
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .product-desc {
+        font-size: 0.7rem;
+        margin-bottom: 6px;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        height: 32px;
+    }
+    
+    .product-price {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    
+    .product-actions {
+        gap: 6px;
+    }
+    
+    .quantity-selector {
+        padding: 2px;
+    }
+    
+    .qty-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+    
+    .qty-value {
+        min-width: 24px;
+        font-size: 0.85rem;
+    }
+    
+    .add-to-cart {
+        padding: 6px 8px;
+        font-size: 0.7rem;
+    }
+
+    .more-info-1 {
+        padding: 6px 8px;
+        font-size: 0.6rem;
+    }
+
+    
+    .features-grid {
+        gap: 8px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .feature-card {
+        padding: 12px 8px;
+        border-radius: 8px;
+    }
+    
+    .feature-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+    
+    .feature-card h3 {
+        font-size: 0.8rem;
+        margin-bottom: 2px;
+    }
+    
+    .feature-card p {
+        font-size: 0.65rem;
+        margin-bottom: 0;
+    }
+    
+    .payment-icons .payment-icon {
+        gap: 6px;
+        font-size: 0.8rem;
+    }
+    
+    .payment-icons i {
+        font-size: 1rem;
+    }
+    
+    .payment-icons span {
+        font-size: 0.7rem;
+    }
+    
+    .category-tabs {
+        gap: 6px;
+        padding: 8px ;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    
+    .category-tabs::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .category-tab {
+        min-width: auto;
+        min-height: auto;
+        color: #000;
+        padding: 1px 1px;
+        font-size: 0.65rem;
+        white-space: nowrap;
+        flex: 0 0 auto;
+    }
+    
+    .contact-grid {
+        gap: 16px;
+    }
+    
+    .contact-info h2 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .info-card {
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+    
+    .info-card h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    
+    .info-card p {
+        font-size: 0.8rem;
+        margin-bottom: 6px;
+    }
+    
+    .info-card i {
+        width: 20px;
+        font-size: 0.9rem;
+    }
+    
+    .contact-form-container {
+        padding: 16px;
+    }
+    
+    .form-group {
+        margin-bottom: 12px;
+    }
+    
+    .form-group label {
+        font-size: 0.8rem;
+        margin-bottom: 4px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+        border-radius: 6px;
+    }
+    
+    .faq-item {
+        margin-bottom: 8px;
+    }
+    
+    .faq-question {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    .faq-question i {
+        font-size: 0.8rem;
+    }
+    
+    .faq-answer p {
+        padding: 0 12px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .about-grid {
+        gap: 20px;
+    }
+    
+    .about-text h2 {
+        font-size: 1.3rem;
+    }
+    
+    .about-text p {
+        font-size: 0.8rem;
+    }
+    
+    .mission-statement {
+        padding: 12px;
+    }
+    
+    .mission-statement h3 {
+        font-size: 1rem;
+    }
+    
+    .values-grid {
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .value-card {
+        padding: 10px;
+    }
+    
+    .value-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+    }
+    
+    .value-card h3 {
+        font-size: 0.8rem;
+        margin-bottom: 2px;
+    }
+    
+    .value-card p {
+        font-size: 0.65rem;
+    }
+    
+    .team-grid {
+        gap: 12px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .team-member {
+        padding: 12px;
+    }
+    
+    .member-image {
+        width: 80px;
+        height: 80px;
+        border-width: 2px;
+    }
+    
+    .member-role {
+        font-size: 0.7rem;
+    }
+    
+    .member-desc {
+        font-size: 0.65rem;
+    }
+    
+    .hours-list li {
+        padding: 8px 0;
+        font-size: 0.8rem;
+    }
+    
+    .checkout-grid {
+        gap: 20px;
+    }
+    
+    .checkout-form h2 {
+        font-size: 1.2rem;
+        padding-bottom: 8px;
+        margin-bottom: 16px;
+    }
+    
+    .order-summary {
+        padding: 16px;
+    }
+    
+    .order-summary h2 {
+        font-size: 1.1rem;
+    }
+    
+    .order-items {
+        max-height: 200px;
+    }
+    
+    .order-item {
+        padding: 10px 0;
+        font-size: 0.8rem;
+    }
+    
+    .order-totals {
+        margin: 12px 0;
+        padding-top: 12px;
+    }
+    
+    .total-row {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+    
+    .total-row.grand-total {
+        font-size: 1.1rem;
+        padding-top: 12px;
+        margin-top: 12px;
+    }
+    
+    .payment-option {
+        padding: 10px;
+        margin-bottom: 8px;
+    }
+    
+    .payment-option label {
+        font-size: 0.85rem;
+    }
+    
+    .payment-option .payment-description {
+        font-size: 0.7rem;
+        margin-left: 22px;
+    }
+    
+    .bank-details {
+        padding: 12px;
+        margin: 12px 0;
+    }
+    
+    .bank-details h4 {
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+    }
+    
+    .bank-details p {
+        font-size: 0.75rem;
+        margin: 6px 0;
+    }
+    
+    .bank-details .underline {
+        font-size: 0.75rem;
+        border-bottom-width: 2px;
+    }
+    
+    .proof-payment-section {
+        padding: 12px;
+        margin-top: 16px;
+    }
+    
+    .proof-payment-section h3 {
+        font-size: 1rem;
+    }
+    
+    .proof-payment-section p {
+        font-size: 0.75rem;
+        margin-bottom: 12px;
+    }
+    
+    .action-buttons .btn {
+        padding: 8px;
+        font-size: 0.75rem;
+    }
+    
+    .confirmation-card {
+        padding: 12px;
+    }
+    
+    .confirmation-row {
+        padding: 8px 0;
+        font-size: 0.8rem;
+    }
+    
+    .order-security {
+        padding: 12px;
+        margin: 12px 0;
+    }
+    
+    .order-security p {
+        font-size: 0.7rem;
+        gap: 4px;
+    }
+    
+    .security-icons {
+        gap: 15px;
+        font-size: 1rem;
+    }
+    
+    .return-policy {
+        padding: 12px;
+    }
+    
+    .return-policy h3 {
+        font-size: 0.9rem;
+    }
+    
+    .return-policy p {
+        font-size: 0.7rem;
+    }
+    
+    .receipt {
+        padding: 12px;
+        border-width: 1px;
+    }
+    
+    .receipt-header {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .receipt-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .receipt-header p {
+        font-size: 0.7rem;
+    }
+    
+    .receipt-details h3 {
+        font-size: 1rem;
+        margin: 12px 0 6px;
+    }
+    
+    .receipt-row {
+        padding: 6px 0;
+        font-size: 0.75rem;
+    }
+    
+    .receipt-row.total {
+        font-size: 1rem;
+        margin-top: 6px;
+    }
+    
+    .receipt-footer {
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+    
+    .receipt-footer p {
+        font-size: 0.7rem;
+        margin-bottom: 2px;
+    }
+    
+    .cart-header {
+        padding: 10px 12px;
+    }
+    
+    .cart-header h3 {
+        font-size: 1rem;
+    }
+    
+    .close-cart {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+    
+    .cart-body {
+        padding: 12px;
+    }
+    
+    .cart-item {
+        padding: 10px 0;
+        gap: 8px;
+        grid-template-columns: 50px 1fr auto;
+    }
+    
+    .cart-item-img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .cart-item-title {
+        font-size: 0.85rem;
+        margin-bottom: 2px;
+    }
+    
+    .cart-item-price {
+        font-size: 0.75rem;
+    }
+    
+    .cart-item-quantity {
+        gap: 6px;
+    }
+    
+    .cart-item-quantity button {
+        width: 22px;
+        height: 22px;
+        font-size: 0.7rem;
+    }
+    
+    .cart-item-quantity span {
+        font-size: 0.75rem;
+        min-width: 16px;
+    }
+    
+    .cart-item-total {
+        font-size: 0.9rem;
+    }
+    
+    .cart-footer {
+        padding: 12px;
+    }
+    
+    .cart-total {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+    
+    .cart-empty i {
+        font-size: 2rem;
+    }
+    
+    .cart-empty p {
+        font-size: 0.9rem;
+    }
+    
+    footer {
+        padding: 30px 0 20px;
+    }
+    
+    .footer-grid {
+        gap: 20px;
+    }
+    
+    .footer-col h4 {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+    
+    .footer-col p {
+        font-size: 0.75rem;
+        margin-bottom: 12px;
+    }
+    
+    .footer-logo .logo-img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .footer-logo .logo-text {
+        font-size: 1rem;
+    }
+    
+    .footer-logo .logo-text span {
+        font-size: 0.8rem;
+    }
+    
+    .social-links a {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+    
+    .contact-info li {
+        font-size: 0.75rem;
+        gap: 6px;
+        margin-bottom: 6px;
+    }
+    
+    /*CONTACT PAGE - Compact*/
+    .contact-grid {
+        gap: 16px;
+    }
+    
+    .contact-info h2 {
+        font-size: 1.2rem;
+        margin-bottom: 12px;
+    }
+    
+    .info-card {
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+    
+    .info-card h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+    
+    .info-card p {
+        font-size: 0.8rem;
+        margin-bottom: 6px;
+    }
+    
+    .info-card i {
+        width: 20px;
+        font-size: 0.9rem;
+    }
+    
+    .contact-form-container {
+        padding: 16px;
+    }
+    
+    .form-group {
+        margin-bottom: 12px;
+    }
+    
+    .form-group label {
+        font-size: 0.8rem;
+        margin-bottom: 4px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+        border-radius: 6px;
+    }
+    
+    /*FAQ SECTION - Compact*/
+    .faq-item {
+        margin-bottom: 8px;
+    }
+    
+    .faq-question {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    .faq-question i {
+        font-size: 0.8rem;
+    }
+    
+    .faq-answer p {
+        padding: 0 12px 12px;
+        font-size: 0.8rem;
+    }
+    
+    /*ABOUT PAGE - Compact*/
+    .about-grid {
+        gap: 20px;
+    }
+    
+    .about-text h2 {
+        font-size: 1.3rem;
+    }
+    
+    .about-text p {
+        font-size: 0.8rem;
+    }
+    
+    .mission-statement {
+        padding: 12px;
+    }
+    
+    .mission-statement h3 {
+        font-size: 1rem;
+    }
+    
+    .values-grid {
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .value-card {
+        padding: 10px;
+    }
+    
+    .value-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+    }
+    
+    .value-card h3 {
+        font-size: 0.8rem;
+        margin-bottom: 2px;
+    }
+    
+    .value-card p {
+        font-size: 0.65rem;
+    }
+    
+    .team-grid {
+        gap: 12px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .team-member {
+        padding: 12px;
+    }
+    
+    .member-image {
+        width: 80px;
+        height: 80px;
+        border-width: 2px;
+    }
+    
+    .member-role {
+        font-size: 0.7rem;
+    }
+    
+    .member-desc {
+        font-size: 0.65rem;
+    }
+    
+    .hours-list li {
+        padding: 8px 0;
+        font-size: 0.8rem;
+    }
+    
+    /*STEP INDICATOR - Compact*/
+    .step-indicator {
+        padding: 5px 0;
+        gap: 8px;
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+    
+    .step-marker {
+        min-width: 55px;
+    }
+    
+    .step-circle {
+        width: 22px;
+        height: 22px;
+        font-size: 0.7rem;
+        margin-bottom: 2px;
+    }
+    
+    .step-label {
+        font-size: 0.6rem;
+    }
+    
+    .step-marker:not(:last-child)::after {
+        display: none;
+    }
+    
+    .newsletter-form input {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .footer-bottom {
+        padding-top: 16px;
+        font-size: 0.7rem;
+    }
+    
+    .payment-methods {
+        gap: 12px;
+        font-size: 1.2rem;
+        margin-top: 8px;
+    }
+    
+    .notification {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+        border-radius: 20px;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        max-width: none;
+    }
+    
+    .modal-header {
+        padding: 12px;
+    }
+    
+    .modal-header h3 {
+        font-size: 1rem;
+    }
+    
+    .modal-body {
+        padding: 16px;
+    }
+    
+    .modal-body p {
+        font-size: 0.85rem;
+    }
+    
+    .modal-footer {
+        padding: 12px;
+    }
+    
+    .checkout-navigation {
+        margin: 20px 0;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    
+    .checkout-navigation .btn {
+        padding: 8px 10px;
+        font-size: 0.7rem;
+    }
+    
+    button, .btn, .qty-btn, 
+    .cart-icon, .faq-question, .payment-option {
+        min-height: 36px;
+        min-width: 36px;
+    }
+    
+    .btn:active, .category-tab:active, 
+    .product-card:active, .payment-option:active {
+        transform: scale(0.97);
+        opacity: 0.8;
+        transition: 0.1s;
+    }
+}

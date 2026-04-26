@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Mr. Creamy Donut</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" type="image/png" href="/mr-creamy-donut/images/mr-creamy-donut-logo.PNG" sizes="512x512">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <div class="logo-img">
+                        <img src="images/mr-creamy-donut-logo.jpg" alt="Mr. Creamy Donut Logo">
+                        <i class="fas fa-donut"></i>
+                    </div>
+                    <div class="logo-text">
+                        MR. CREAMY
+                        <span>DONUT</span>
+                    </div>
+                </a>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">R0.00</span>
+            </div>
+            <div class="cart-actions">
+                <button class="btn btn-brown" onclick="window.location.href='checkout.html'">Checkout</button>
+                <button class="btn btn-outline" id="clearCartBtn">Clear Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Progress -->
+    <section class="checkout-progress">
+        <div class="container">
+            <div class="step-indicator" id="stepIndicator">
+                <div class="step-marker active" data-step="1">
+                    <div class="step-circle">1</div>
+                    <div class="step-label">Information</div>
+                </div>
+                <div class="step-marker" data-step="2">
+                    <div class="step-circle">2</div>
+                    <div class="step-label">Confirm</div>
+                </div>
+                <div class="step-marker" data-step="3">
+                    <div class="step-circle">3</div>
+                    <div class="step-label">Payment</div>
+                </div>
+                <div class="step-marker" data-step="4">
+                    <div class="step-circle">4</div>
+                    <div class="step-label">Complete</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Content -->
+    <section class="checkout-section section">
+        <div class="container">
+            <div class="checkout-grid">
+                <div class="checkout-form">
+                    <!-- Step 1: Information -->
+                    <div id="step1" class="step-content active">
+                        <h2>Shipping Information</h2>
+                        <form id="shippingForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Street Address *</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="province">Province *</label>
+                                    <select id="province" name="province" required>
+                                        <option value="">Select Province</option>
+                                        <option value="GP">Gauteng</option>
+                                        <option value="WC">Western Cape</option>
+                                        <option value="KZN">KwaZulu-Natal</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="zipCode">Postal Code *</label>
+                                    <input type="text" id="zipCode" name="zipCode" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Location *</label>
+                                    <select id="country" name="country" required>
+                                        <option value="">Select Location</option>
+                                        <option value="Vaal">Vanderbijlpark</option>
+                                        <option value="Vereeniging">Vereeniging</option>
+                                        <option value="Bedworth">Bedworth Park</option>
+                                        <option value="Kollege Park">Kollege Park</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="deliveryOption">Delivery Option *</label>
+                                <select id="deliveryOption" name="deliveryOption" required>
+                                    <option value="standard">Standard Delivery (3h 15min) - R36.00</option>
+                                    <option value="express">Express Delivery (1h 45min) - R56.00</option>
+                                    <option value="pickup">Store Pickup - Free</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="specialInstructions">Special Instructions (Optional)</label>
+                                <textarea id="specialInstructions" name="specialInstructions" rows="3" placeholder="Any special delivery instructions?"></textarea>
+                            </div>
+                        </form>
+                        
+                        <div class="checkout-navigation">
+                            <a href="menu.html" class="btn btn-outline">
+                                <i class="fas fa-arrow-left"></i> Back to Menu
+                            </a>
+                            <button class="btn btn-brown" onclick="checkout.next()">
+                                Continue to Confirmation <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Confirmation -->
+                    <div id="step2" class="step-content">
+                        <h2>Confirm Your Details</h2>
+                        <p style="color: #666; margin-bottom: 20px;"><i class="fas fa-info-circle"></i> Please review your information before proceeding to payment.</p>
+                        
+                        <div class="confirmation-card">
+                            <h3 style="color: #8B4513; margin-bottom: 15px;"><i class="fa-solid fa-receipt"></i> Order Summary</h3>
+                            
+                            <div class="confirmation-row">
+                                <span class="confirmation-label">Contact:</span>
+                                <span class="confirmation-value" id="confirmContact"></span>
+                            </div>
+                            
+                            <div class="confirmation-row">
+                                <span class="confirmation-label">Shipping to:</span>
+                                <span class="confirmation-value" id="confirmAddress"></span>
+                            </div>
+                            
+                            <div class="confirmation-row">
+                                <span class="confirmation-label">Delivery:</span>
+                                <span class="confirmation-value" id="confirmDelivery"></span>
+                            </div>
+                            
+                            <div class="confirmation-row">
+                                <span class="confirmation-label">Items:</span>
+                                <span class="confirmation-value" id="confirmItems"></span>
+                            </div>
+                            
+                            <div class="confirmation-row">
+                                <span class="confirmation-label">Subtotal:</span>
+                                <span class="confirmation-value" id="confirmSubtotal"></span>
+                            </div>
+                            
+                            <div class="confirmation-row">
+                                <span class="confirmation-label">Delivery:</span>
+                                <span class="confirmation-value" id="confirmDeliveryFee"></span>
+                            </div>
+                            
+                            <div class="confirmation-row" style="font-weight: bold; color: #8B4513; border-bottom: none;">
+                                <span class="confirmation-label">Total:</span>
+                                <span class="confirmation-value" id="confirmTotal"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="checkout-navigation">
+                            <button class="btn btn-outline" onclick="checkout.previous()">
+                                <i class="fas fa-arrow-left"></i> Back to Information
+                            </button>
+                            <button class="btn btn-brown" onclick="checkout.next()">
+                                Continue to Payment <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Payment -->
+                    <div id="step3" class="step-content">
+                        <h2>Payment Method</h2>
+                        
+                        <div class="payment-options">
+                            <div class="payment-option selected" onclick="checkout.selectPayment('eft')">
+                                <input type="radio" name="payment" id="paymentEft" value="eft" checked>
+                                <label for="paymentEft">🏦 EFT / Bank Transfer</label>
+                                <div class="payment-description">Pay directly from your bank account</div>
+                            </div>
+                            
+                            <div class="payment-option" onclick="checkout.selectPayment('cash')">
+                                <input type="radio" name="payment" id="paymentCash" value="cash">
+                                <label for="paymentCash">💰 Cash</label>
+                                <div class="payment-description">Pay with cash when you receive your order</div>
+                            </div>
+
+                            <!-- NEW PAYPAL OPTION -->
+                             <div class="payment-option" onclick="checkout.selectPayment('paypal')">
+                                <input type="radio" name="payment" id="paymentPaypal" value="paypal">
+                                <label for="paymentPaypal">💳 PayPal</label>
+                                <div class="payment-description">Pay securely with your PayPal account</div>
+                             </div>
+                        </div>
+
+                        
+                        <!-- EFT Bank Details -->
+                        <div id="eftDetails" class="bank-details">
+                            <h4><i class="fas fa-university"></i> Mr. Creamy Donut Bank Details</h4>
+                            <p><strong>Bank:</strong> <span class="detail-value"> Capitec Bank</span></p>
+                            <p><strong>Account Holder:</strong> <span class="detail-value"> Mr. Creamy Donut (Pty) Ltd</span></p>
+                            <p><strong>Account Number:</strong> <span class="detail-value"> 174582863</span></p>
+                            <p><strong>Account Type:</strong> <span class="detail-value"> Personal Account</span></p>
+                            <p><strong>Branch Code:</strong> <span class="detail-value"> 470010</span></p>
+                            <p><strong>Reference:</strong> <span class="underline" id="paymentReference">MCD-12345</span></p>
+                            <p style="color: #666; font-size: 14px; margin-top: 10px;">
+                                <i class="fas fa-info-circle"></i> Please use your order number as reference. Orders are processed after payment confirmation.
+                            </p>
+                        </div>
+                        
+                        <!-- Cash on Delivery Info -->
+                        <div id="cashDetails" class="bank-details" style="display: none; border-left-color: #FF9800;">
+                            <h4><i class="fas fa-money-bill-wave"></i> Cash on Delivery / Pickup</h4>
+                            <p>Pay with cash when your donuts are delivered or when you collect from our store.</p>
+                            <p><strong>Store Address:</strong> Vanderbijlpark, Gauteng</p>
+                            <p><strong>Pickup Hours:</strong> Mon-Fri 9am-6pm, Sat 9am-3pm</p>
+                            <p><strong>Amount to pay:</strong> <span style="color: #8B4513; font-weight: bold;" id="cashAmount">R0.00</span></p>
+                        </div>
+
+                        <!-- === NEW PAYPAL DETAILS SECTION (add this after cashDetails) === -->
+                         <div id="paypalDetails" class="bank-details" style="display: none; border-left-color: #003087;">
+                            <h4><i class="fab fa-paypal"></i> PayPal Payment</h4>
+                            <p>Click the button below to complete your payment securely via PayPal.</p>
+                            <p><strong>Total Amount:</strong> <span style="color: #8B4513; font-weight: bold;" id="paypalAmount">R0.00</span></p>
+                            <a href="https://paypal.me/pakiso47/" target="_blank" class="btn btn-primary" style="background: #003087; color: white; display: inline-block; margin-top: 10px;"><i class="fab fa-paypal"></i> Pay with PayPal.Me</a>
+                            <p style="color: #666; font-size: 14px; margin-top: 15px;"><i class="fas fa-external-link-alt"></i> You'll be redirected to PayPal to complete your payment.</p>
+                         </div>
+                        
+                        <!-- Proof of Payment Section (shown for EFT) -->
+                        <div id="proofPaymentSection" class="proof-payment-section">
+                            <h3><i class="fas fa-receipt"></i> Send Proof of Payment</h3>
+                            <p style="color: #666; margin-bottom: 20px;">After making your EFT payment, please send us the proof:</p>
+                            
+                            <div class="action-buttons">
+                                <button class="btn btn-whatsapp" onclick="checkout.sendViaWhatsApp()">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </button>
+                                <button class="btn btn-email" onclick="checkout.sendViaEmail()">
+                                    <i class="fas fa-envelope"></i> Email
+                                </button>
+                                <button class="btn btn-cancel" onclick="checkout.showEFTCancelModal()">
+                                    <i class="fas fa-times"></i> Cancel
+                                </button>
+                            </div>
+                            
+                            <button id="paymentSentBtn" class="btn btn-payment-sent" style="display: none;" onclick="checkout.showReceipt()">
+                                <i class="fas fa-check-circle"></i> Payment Sent - Click to View Receipt
+                            </button>
+                        </div>
+                        
+                        <!-- Receipt Section -->
+                        <div id="receiptSection" style="display: none;">
+                            <div class="receipt" id="receiptContent">
+                                <div class="receipt-header">
+                                    <h2>🍩 Mr. Creamy Donut</h2>
+                                    <p>Payment Confirmation Receipt</p>
+                                    <p id="receiptDate"></p>
+                                </div>
+                                
+                                <div class="receipt-details">
+                                    <div class="receipt-row">
+                                        <span>Order Number:</span>
+                                        <span id="receiptOrder">#MDC-12345</span>
+                                    </div>
+                                    <div class="receipt-row">
+                                        <span>Customer:</span>
+                                        <span id="receiptCustomer"></span>
+                                    </div>
+                                    <div class="receipt-row">
+                                        <span>Email:</span>
+                                        <span id="receiptEmail"></span>
+                                    </div>
+                                    <div class="receipt-row">
+                                        <span>Phone:</span>
+                                        <span id="receiptPhone"></span>
+                                    </div>
+                                    <div class="receipt-row">
+                                        <span>Delivery Address:</span>
+                                        <span id="receiptAddress"></span>
+                                    </div>
+                                    <div class="receipt-row">
+                                        <span>Delivery Method:</span>
+                                        <span id="receiptDelivery"></span>
+                                    </div>
+                                    <div class="receipt-row">
+                                        <span>Payment Method:</span>
+                                        <span id="receiptPayment"></span>
+                                    </div>
+                                    
+                                    <h3 style="margin: 20px 0 10px; color: #8B4513;">Items</h3>
+                                    <div id="receiptItems"></div>
+                                    
+                                    <div class="receipt-row">
+                                        <span>Subtotal:</span>
+                                        <span id="receiptSubtotal">R0.00</span>
+                                    </div>
+                                    <div class="receipt-row">
+                                        <span>Delivery Fee:</span>
+                                        <span id="receiptDeliveryFee">R0.00</span>
+                                    </div>
+                                    <div class="receipt-row total">
+                                        <span>Total Paid:</span>
+                                        <span id="receiptTotal">R0.00</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="receipt-footer">
+                                    <p>Thank you for ordering from Mr. Creamy Donut! 🍩</p>
+                                    <p>Your donuts will be prepared fresh for you.</p>
+                                    <p style="font-size: 12px; margin-top: 10px;">Receipt #: <span id="receiptNumber"></span></p>
+                                </div>
+                            </div>
+                            
+                            <div class="receipt-actions">
+                                <button class="btn btn-brown" onclick="checkout.downloadPDF()">
+                                    <i class="fas fa-file-pdf"></i> Download PDF
+                                </button>
+                                <button class="btn btn-outline btn-pdf" onclick="checkout.printReceipt()">
+                                    <i class="fas fa-print"></i> Print
+                                </button>
+                                <a href="index.html" class="btn btn-outline">
+                                    <i class="fas fa-home"></i> Home
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="checkout-navigation" id="paymentNavigation">
+                            <button class="btn btn-outline" onclick="checkout.previous()">
+                                <i class="fas fa-arrow-left"></i> Back to Confirmation
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Complete (hidden, just for progress) -->
+                    <div id="step4" class="step-content">
+                        <!-- This step is just for progress tracking -->
+                    </div>
+                </div>
+                
+                <div class="order-summary">
+                    <h2>Order Summary</h2>
+                    <div class="order-items" id="checkoutItems">
+                        <!-- Order items will be loaded here -->
+                    </div>
+                    
+                    <div class="order-totals">
+                        <div class="total-row">
+                            <span>Subtotal</span>
+                            <span id="subtotal">R0.00</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Delivery Fee</span>
+                            <span id="deliveryFee">R36.00</span>
+                        </div>
+                        <div class="total-row grand-total">
+                            <span>Total</span>
+                            <span id="grandTotal">R0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="order-security">
+                        <p><i class="fas fa-lock"></i> Secure checkout. Your information is encrypted.</p>
+                        <div class="security-icons">
+                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-user-lock"></i>
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="return-policy">
+                        <h3><i class="fas fa-undo"></i> Return Policy</h3>
+                        <p>If you're not satisfied with your order, contact us within 24 hours for a full refund or replacement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-img">
+                            <img src="images/mr-creamy-donut-logo.jpg" alt="Mr. Creamy Donut Logo">
+                        </div>
+                        <div class="logo-text">
+                            MR. CREAMY
+                            <span>DONUT</span>
+                        </div>
+                    </div>
+                    <p>Delivering happiness one donut at a time since 2025.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Vanderbijlpark, Gauteng, South Africa</li>
+                        <li><i class="fas fa-phone"></i> +27 (78) 210 1293</li>
+                        <li><i class="fas fa-envelope"></i> orders@mrcreamydonut.com</li>
+                        <li><i class="fas fa-clock"></i> 7AM-9PM Daily</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers and new flavors!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mr. Creamy Donut. All rights reserved.</p>
+                <div class="payment-methods">
+                    <i class="fas fa-university"></i>
+                    <i class="fas fa-money-bill-wave"></i>
+                    <i class="fab fa-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div id="notification" class="notification" style="display: none;"></div>
+
+    <!-- Custom Confirmation Modal -->
+    <div id="confirmationModal" class="custom-modal" style="display: none;">
+        <div class="modal-overlay" onclick="checkout.closeModal()"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3><i class="fas fa-question-circle"></i> Confirm Action</h3>
+                <button class="modal-close" onclick="checkout.closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage">Are you sure you want to proceed?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="checkout.closeModal()">Cancel</button>
+                <button class="btn btn-brown" id="modalConfirmBtn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

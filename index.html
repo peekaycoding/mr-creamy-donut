@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Creamy Donut | Premium Artisanal Donuts</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" type="image/png" href="/mr-creamy-donut/images/mr-creamy-donut-logo.PNG" sizes="512x512">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <div class="logo-img">
+					<img src="images/mr-creamy-donut-logo.jpg" alt="Mr. Creamy Donut Logo">
+                        <i class="fas fa-donut"></i>
+                    </div>
+                    <div class="logo-text">
+                        MR. CREAMY
+                        <span>DONUT</span>
+                    </div>
+                </a>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="header-actions">
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+ 
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+            <button id="closeCart" class="close-cart" type="button" title="Close Cart" aria-label="Close Cart">
+				<i class="fas fa-times" aria-hidden="true"></i>
+			</button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">R 0.00</span>
+            </div>
+            <div class="cart-actions">
+                <a href="checkout.html" class="btn btn-brown" id="checkoutBtn">Checkout</a>
+                <button class="btn btn-outline" id="clearCartBtn">Clear Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Experience the Creamiest Donuts in SA</h1>
+                <p>Handcrafted with love, filled with premium cream, and made fresh daily in South Africa. Your perfect treat awaits!</p>
+                <div class="hero-buttons">
+                    <a href="menu.html" class="btn btn-primary">Order Now</a>
+                    <a href="#featured" class="btn btn-outline">View Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="featured" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Signature Donuts</h2>
+                <p>Discover our most popular creations</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-badge">Bestseller</div>
+                    <img src="images/creamy-chocolate-bliss.jpg" alt="Creamy Chocolate Bliss" class="product-img">
+                    <div class="product-content">
+                        <h3>Creamy Chocolate Bliss</h3>
+                        <p class="product-desc">Double chocolate with cream filling hiting the tip of the tongue</p>
+                        <div class="product-price">R7.99</div>
+                        <button class="btn btn-primary add-to-cart" data-id="1">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="images/vanilla-glazed-sprinkles.jpg" alt="Vanilla Rainbow Sprinkles" class="product-img">
+                    <div class="product-content">
+                        <h3>Vanilla Ring Donut</h3>
+                        <p class="product-desc"> Vanilla glazed ring Donut, with rainbow sprinkles</p>
+                        <div class="product-price">R7.99</div>
+                        <button class="btn btn-primary add-to-cart" data-id="2">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+					<div class="product-badge">Most Wanted</div>
+                    <img src="images/happy-bliss-box.jpg" alt="Happy Bliss Box" class="product-img">
+                    <div class="product-content">
+                        <h3>Happy Bliss Box</h3>
+                        <p class="product-desc">The Happy Bliss Box it's a deligacy to share with friends, family, colleagues or loved ones which create unforgettable moments that you will never forget.</p>
+                        <div class="product-price">R46.99</div>
+						<div class="button-group">
+							<a class="btn btn-primary add-to-cart" data-id="4">Add to Cart</a> 
+							<a class="btn btn-outline more-info-1"  href="happy-bliss-box-info.html"> More Info </a>
+						</div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="menu.html" class="btn btn-brown">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>Made with the finest ingredients sourced locally in South Africa</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Fresh donuts delivered to your door in 30 minutes across major SA cities</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <h3>Proudly South African</h3>
+                    <p>Supporting local farmers and creating jobs in our community</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- South African Payment Methods -->
+    <section class="payment-methods-section section" style="background: var(--light-cream);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Easy & Secure Payments</h2>
+                <p>We accept all popular South African payment methods</p>
+            </div>
+            <div class="payment-icons">
+                <div class="payment-icon">
+                    <i class="fas fa-university"></i>
+                    <span>Instant EFT</span>
+					<span>|</span>
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Cash</span>
+					<span>|</span>
+                    <i class="fab fa-paypal"></i>
+                    <span>PayPal</span>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-img">
+                            <img src="images/mr-creamy-donut-logo.jpg" alt="Mr. Creamy Donut Logo">
+                        </div>
+                        <div class="logo-text">
+                            MR. CREAMY
+                            <span>DONUT</span>
+                        </div>
+                    </div>
+                    <p>Delivering happiness one donut at a time since 2025. Proudly South African.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Vanderbijlpark, Gauteng, South Africa</li>
+                        <li><i class="fas fa-phone"></i> +27 (78) 210 1293</li>
+                        <li><i class="fas fa-envelope"></i> orders@mrcreamydonut.co.za</li>
+                        <li><i class="fas fa-clock"></i> 7AM-6PM Daily</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers and new flavors!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mr. Creamy Donut. All rights reserved. | <a href="#" style="color: var(--gold);">POPIA Compliance</a></p>
+                <div class="payment-methods">
+                    <i class="fas fa-university"></i>
+                    <i class="fas fa-money-bill-wave"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        // Initialize cart on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Newsletter form
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    showNotification('Thank you for subscribing!', 'success');
+                    this.reset();
+                });
+            }
+        });
+        
+        function showNotification(message, type) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = 'notification ' + type;
+            notification.style.display = 'block';
+            
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
